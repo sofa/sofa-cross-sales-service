@@ -1,0 +1,41 @@
+{
+  "name": "sofa-cross-sales-service",
+  "version": "0.1.0",
+  "description": "Sofa Web SDK CrossSales service component.",
+  "main": "dist/sofaCrossSalesService.js",
+  "homepage": "http://www.sofa.io",
+  "scripts": {
+    "test": "gulp build"
+  },
+  "engines": {
+    "node": ">=0.10.x",
+    "npm": ">=1.2.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sofa/sofa-cross-sales-service"
+  },
+  "keywords": [
+    "sofa",
+    "sofa.io",
+    "web",
+    "sdk",
+    "service"
+  ],
+  "author": "Pascal Precht <pascal@couchcommerce.com>",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/sofa/sofa-cross-sales-service/issues"
+  },
+  "dependencies": {
+    "sofa-core": "^0.15.x",
+    "sofa-http-service": "^0.6.0",
+    "sofa-q-service": "^0.3.1",
+    "sofa-storages": "^0.5.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "shared-sofa-component-tasks": "^0.11.0",
+    "sofa-testing": "^0.8.0"
+  }
+}
