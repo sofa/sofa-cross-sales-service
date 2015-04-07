@@ -66,18 +66,24 @@ sofa.define('sofa.CrossSalesService', function (configService, httpService, stor
      * @description
      *
      * @example
-     * crossSalesService.trackProductView(userId, productId);
+     * crossSalesService.getRecommendedProductIds(productIds);
      *
-     * @param {string} userId Id of a user or random string if not available
-     * @param {string} productId Id of the product the user is visiting
+     * @param {string} productIds   Array of last seen product IDs
+     * @param {string} count        optional number of displayed products
      *
-     * @return {object|Promise} A promise that resolves
+     * @return {object|Promise} A promise that resolves the recommended product IDs
      */
-    self.getRecommendedProductIds = function (productIds) {
-        var historyString = productIds.join(',');
+    self.getRecommendedProductIds = function (productIds, count) {
+        var historyString = productIds.join(','),
+            countString = '';
+    
+        if(count !== null) {
+            countString = '&count=' + count;
+        }
+    
         return httpService({
             method: 'GET',
-            url: RECOMMENDATIONS_ENDPOINT + historyString
+            url: RECOMMENDATIONS_ENDPOINT + historyString + countString
         }).then(function (response) {
             return response.data;
         });
